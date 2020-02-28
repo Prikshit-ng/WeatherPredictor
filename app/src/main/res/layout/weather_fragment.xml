@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_18"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_marginStart="@dimen/margin_18"
         android:layout_marginTop="@dimen/margin_18"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date" />
@@ -34,7 +34,7 @@
         android:id="@+id/temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_big"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/city"
@@ -56,7 +56,7 @@
         android:layout_marginTop="@dimen/margin_18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_18"
         app:layout_constraintStart_toStartOf="@+id/temp"
         app:layout_constraintTop_toBottomOf="@+id/temp" />
@@ -67,6 +67,7 @@
         android:layout_marginTop="18dp"
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
+        android:tint="@android:color/white"
         android:src="@drawable/ic_sunrise"
         app:layout_constraintStart_toStartOf="@+id/desc"
         app:layout_constraintTop_toBottomOf="@+id/desc" />
@@ -77,7 +78,7 @@
         android:layout_marginStart="@dimen/text_18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_18"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -88,7 +89,7 @@
         android:layout_marginStart="@dimen/margin_18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_18"
         app:layout_constraintBottom_toBottomOf="@+id/sunsetIV"
         app:layout_constraintStart_toEndOf="@+id/sunsetIV"
@@ -96,6 +97,7 @@
 
     <ImageView
         android:id="@+id/sunsetIV"
+        android:tint="@android:color/white"
         android:layout_marginTop="18dp"
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
@@ -109,17 +111,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_18"
         android:text="@string/future_forecasts"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_big"
         app:layout_constraintStart_toStartOf="@+id/sunsetIV"
         app:layout_constraintTop_toBottomOf="@+id/sunsetIV" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/margin_18"
-        android:layout_height="0dp"
+    <RelativeLayout
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/futureTV" />
+        app:layout_constraintTop_toBottomOf="@+id/futureTV"
+        android:background="#90FFFFFF"
+        android:layout_marginTop="@dimen/margin_18"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
